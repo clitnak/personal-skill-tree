@@ -50,7 +50,7 @@
     .separation(function(a,b){return 10;})
     .size([height-2*border,width-2*border]);
 
-  d3.json("https://gist.githubusercontent.com/nshadov/0e087575e131691d481d1b3b0cd6a2d6/raw/fa9279354c80e0d3b1332212a23d0010306b82af/skill-tree.json", function(data){
+  d3.json("http://tree.litnak.com/trees/charity.json", function(data){
 
     //alert(JSON.stringify(data));
 
