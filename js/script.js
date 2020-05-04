@@ -109,7 +109,7 @@
     }
 
     node.append("image")
-      .attr("xlink:href", function(d) { return "img/icons/skill.png"; })
+      .attr("xlink:href", function(d) { return "../img/icons/skill.png"; })
       .attr("class", "skill-img glowing")
       .attr("x", "-"+nodesize/2+"px")
       .attr("y", "-"+nodesize/2+"px")
@@ -118,8 +118,8 @@
 
 
     node.append("image")
-      .attr("xlink:href", function(d) { return "img/icons/"+d.icon+".png"; })
-      .attr("class", "skill-icon")
+      //.attr("xlink:href", function(d) { return "../img/icons/"+d.icon+".png"; })
+      .attr("class", function(d) { return "skill-icon " + d.icon; })
       .attr("x", "-"+(nodesize/2-4)+"px")
       .attr("y", "-"+(nodesize/2-4)+"px")
       .attr("width", (nodesize-8)+"px")

@@ -1,13 +1,14 @@
 {
-    "name": "Security",
-    "icon": "security",
+    "name": "Enrichment",
+    "icon": "Enrichment",
     "children": [
         { 
-            "name": "Penetration Testing",
-            "icon": "BoM",
+            "name": "Music I",
+            "icon": "fas fa-music",
             "children" : [
                 { 
-                    "name": "Exploitation",
+                    "name": "Music II",
+                    "icon": "fas fa-music",
                     "children" : [
                         { "name": "Fuzzing" },
                         { "name": "ROP" }
