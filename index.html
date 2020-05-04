@@ -1,16 +1,172 @@
-<!doctype html>
-<HTML>
-  <HEAD>
-    <TITLE>Personal Skill Tree</TITLE>
-    <SCRIPT src="https://d3js.org/d3.v3.min.js"></SCRIPT>
-    <SCRIPT src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></SCRIPT>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Litnak Enrichment Trees</title>
     <LINK rel="stylesheet" type="text/css" href="css/style.css"/>
-  </HEAD>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <BODY>
-    <DIV id="tree" class="container">
-      <SCRIPT src="js/tooltip.js"></SCRIPT>
-      <SCRIPT src="js/script.js"></SCRIPT>
-    </DIV>
-  </BODY>
-</HTML>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+    <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      height: 100vh;
+    }
+        .wrapper {
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              justify-content: center;
+              width: 100%;
+              min-height: 100%;
+              padding: 20px;
+        }
+        #formContent {
+          -webkit-border-radius: 10px 10px 10px 10px;
+          border-radius: 10px 10px 10px 10px;
+          background: #fff;
+          padding: 130px;
+          width: 90%;
+          max-width: 450px;
+          position: relative;
+          padding: 0px;
+          -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+          box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+          text-align: center;
+        }
+        .password {
+            width: 65%;
+        }
+input[type=button], input[type=submit], input[type=reset]  {
+  background-color: #56baed;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  background-color: #39ace7;
+}
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+input[type=password] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+input[type=password]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #5fbae9;
+}
+
+input[type=password]:placeholder {
+  color: #cccccc;
+}
+
+
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div id="formContent">
+                <label for="userPassword">Password</label>
+                <input type="password" id="userPassword" />
+                <input type="button" class="btn btn-primary" onclick="redirect();" value="login" />
+    </div>
+</div>
+<script>
+    String.prototype.hashCode = function() {
+        var hash = 0;
+        if (this.length == 0) {
+            return hash;
+        }
+        for (var i = 0; i < this.length; i++) {
+            var char = this.charCodeAt(i);
+            hash = ((hash<<5)-hash)+char;
+            hash = hash & hash; // Convert to 32bit integer
+        }
+        return hash;
+    }
+    function redirect() {
+        var directory = getDirectoryFromPassword(document.getElementById("userPassword").value);
+        window.location.href = directory;
+    }
+
+    function getDirectoryFromPassword(password) {
+        var directory = '';
+        switch (password.hashCode()) {
+            case -718905986:
+                directory = 'charity'.hashCode(); //739065240
+                break;
+            case -842726768:
+                directory = 'celeste'.hashCode(); //662958825
+                break;
+            case 1518258847:
+                directory = 'braxten'.hashCode(); //138041910
+                break;
+            case -556231223:
+                directory = 'bridger'.hashCode(); //144821769
+                break;
+            case -666189331:
+                directory = 'quinton'.hashCode(); //658673258
+                break;
+            case -312580201:
+                directory = 'destiny'.hashCode(); //1557364242
+                break;
+
+            default:
+                alert('WRONG password (' + password.hashCode()+')');
+        }
+        //returning hashcode of kid's name so kids can't figure out eachothers pages to see how far they are on their
+        //skills
+        return '/' + directory;
+    }
+
+</script>
+
+</body>
+</html>
