@@ -33,7 +33,7 @@ function show_tooltip(d) {
 
   //$(".tooltip-header").text(d.name);
   d3.select(".tooltip").select("div.tooltip-title").text(d.name);
-  d3.select(".tooltip").select("div.tooltip-post").text(d.name);
+  d3.select(".tooltip").select("div.tooltip-post").text(d.description);
 
   var img = d3.select(".tooltip").select("div.tooltip-icon").select("img")
     .style("background-image", "url('img/icons/"+d.icon+".png')");
