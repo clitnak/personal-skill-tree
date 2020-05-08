@@ -1,92 +1,78 @@
-[
-    {
-        "name": "Enrichment",
-        "icon": "Enrichment",
-        "description": "hi",
-        "children":
-        [
-            {
-                "name": "Music I",
-                "icon": "fas fa-music",
-                "children": [
-                    {
-                        "name": "Music II",
-                        "icon": "fas fa-music",
-                        "children": [
-                            {
-                                "name": "Fuzzing"
-                            },
-                            {
-                                "name": "ROP"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Reconissance"
-                    },
-                    {
-                        "name": "WebApp"
-                    }
-                ]
-            },
-            {
-                "name": "Incident Response",
-                "icon": "incident_response",
-                "children": [
-                    {
-                        "name": "Forensics"
-                    },
-                    {
-                        "name": "Network Analysis"
-                    },
-                    {
-                        "name": "Threat Intelligence"
-                    },
-                    {
-                        "name": "Malware Analysis"
-                    }
-                ]
-            },
-            {
-                "name": "Reverse Engineering",
-                "icon": "reverse_engineering",
-                "children": [
-                    {
-                        "name": "Anti-Reverse"
-                    },
-                    {
-                        "name": "Tools",
-                        "children": [
-                            {
-                                "name": "Radare2"
-                            },
-                            {
-                                "name": "GDB"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "ASM"
-                    }
-                ]
-            }
-        ]
-    },
 
-    {
-        "name": "Reverse Engineering",
-        "icon": "reverse_engineering",
-        "children" : [
-            { "name": "Anti-Reverse" },
-            {
-                "name": "Tools",
-                "children" : [
-                    { "name": "Radare2" },
-                    { "name": "GDB" }
-                ]
-            },
-            { "name": "ASM" }
-        ]
+{
+    "name": "Birth",
+    "icon": "Birth",
+    "description": "Thank you for being born",
+    "children":
+    [
+        {
+            "name": "Fasting I",
+            "icon": "Fasting I",
+            "description": "Fast for one meal",
+            "children": [
+                {
+                    "name": "Fasting II",
+                    "icon": "Fasting II"
 
-    }
-]
+                }
+            ]
+        },
+        {
+            "name": "Scripture Knowledge I: Book of Mormon",
+            "icon": "Scripture Knowledge I",
+            "description": "Read the BoM",
+            "children": [
+                {
+                    "name": "Scripture Knowledge II: Doctrine and Covenants",
+                    "icon": "Scripture Knowledge II",
+                    "description": "Read the Doctrine and Covenants",
+                    "children": [
+                        {
+                            "name": "Scripture Knowledge III: The New Testamant",
+                            "icon": "Scripture Knowledge III",
+                            "description": "Read the New Testament"
+                        }
+                    ],
+                    "name": "Prophets I: Joseph Smith ",
+                    "icon": "Prophets I",
+                    "description": "Listen to Joseph Smith the Prophet",
+                    "children": [
+                        {
+                            "name": "Prophets II: Russel M. Nelson",
+                            "icon": "Prophets II",
+                            "description": "Read his biography?"
+                        }
+                    ]
+                },
+                {
+                    "name": "Network Analysis"
+                },
+                {
+                    "name": "Threat Intelligence"
+                },
+                {
+                    "name": "Malware Analysis"
+                }
+            ]
+        },
+        {
+            "name": "Fasting I: One-meal fast",
+            "icon": "Fasting I",
+            "children": [
+                {
+                    "name": "Fasting II"
+                }
+            ]
+        },
+        {
+            "name": "Music I: Learn the piano and play in a recital",
+            "icon": "Music I: ",
+            "children": [
+                {
+                    "name": "Reflections I"
+                }
+            ]
+        }
+    ]
+}
+
