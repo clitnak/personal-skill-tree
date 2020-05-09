@@ -118,16 +118,11 @@
 
 
     node.append("image")
-      //.attr("xlink:href", function(d) { return "../img/icons/"+d.icon+".png"; })
+      .attr("xlink:href", function(d) { return "../img/icons/"+d.icon+".png"; })
       .attr("class", function(d) { return "skill-icon " + d.icon; })
       .attr("x", "-"+(nodesize/2-4)+"px")
       .attr("y", "-"+(nodesize/2-4)+"px")
       .attr("width", (nodesize-8)+"px")
       .attr("height", (nodesize-8)+"px");
 
-
-    node.append("text")
-      .text(function(d) {
-        return d.name;
-      });
   });

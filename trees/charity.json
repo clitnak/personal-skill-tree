@@ -6,12 +6,12 @@
     "children":
     [
         {
-            "name": "Fasting I",
+            "name": "Fasting I: One-Meal Fast",
             "icon": "Fasting I",
             "description": "Fast for one meal",
             "children": [
                 {
-                    "name": "Fasting II",
+                    "name": "Fasting II: Two-Meal Fast",
                     "icon": "Fasting II"
 
                 }
@@ -43,24 +43,15 @@
                             "description": "Read his biography?"
                         }
                     ]
-                },
-                {
-                    "name": "Network Analysis"
-                },
-                {
-                    "name": "Threat Intelligence"
-                },
-                {
-                    "name": "Malware Analysis"
                 }
             ]
         },
         {
-            "name": "Fasting I: One-meal fast",
-            "icon": "Fasting I",
+            "name": "Social Training I: 7 Habits",
+            "icon": "Social Training I",
             "children": [
                 {
-                    "name": "Fasting II"
+                    "name": "Social Training II"
                 }
             ]
         },
