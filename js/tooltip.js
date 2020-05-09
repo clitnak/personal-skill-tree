@@ -36,7 +36,7 @@ function show_tooltip(d) {
   d3.select(".tooltip").select("div.tooltip-post").text(d.description);
 
   var img = d3.select(".tooltip").select("div.tooltip-icon").select("img")
-    .style("background-image", "url('img/icons/"+d.icon+".png')");
+    .style("background-image", "url('../img/icons/"+d.icon+".png')");
 
   console.log(img);
 

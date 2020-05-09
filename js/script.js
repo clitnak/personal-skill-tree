@@ -98,7 +98,7 @@
     node.append("circle")
       .attr("r", nodesize/2)
       .attr("class", "glowing")
-      .attr("fill", "blue");
+      .attr("fill", "green");
 
     // ADDING TOOLTIPS
     if (typeof tooltip !== 'undefined') {
